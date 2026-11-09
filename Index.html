@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GameUz - O'yinlar olami</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:#0b1220;
+ color:white;
+}
+header{
+ background:#14243b;
+ padding:22px;
+ text-align:center;
+ border-bottom:2px solid #36d99b;
+}
+header h1{color:#36d99b;margin:0}
+nav{
+ display:flex;
+ justify-content:center;
+ gap:20px;
+ padding:15px;
+ background:#101b2c;
+}
+nav a{color:white;text-decoration:none}
+.hero{text-align:center;padding:35px 15px}
+.hero h2{font-size:30px}
+.hero p{color:#b9c8dc}
+input{
+ width:90%;
+ max-width:450px;
+ padding:13px;
+ border-radius:10px;
+ border:0;
+ margin-top:15px;
+}
+.container{
+ max-width:1000px;
+ margin:auto;
+ padding:15px;
+}
+h2.title{color:#36d99b}
+.grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+ gap:15px;
+}
+.card{
+ background:#17263b;
+ padding:18px;
+ border-radius:13px;
+ border:1px solid #2b405c;
+}
+.card h3{color:#36d99b}
+.card p{color:#c0ccdc}
+button{
+ background:#36d99b;
+ color:#07140f;
+ border:0;
+ border-radius:20px;
+ padding:9px 15px;
+ font-weight:bold;
+}
+footer{
+ text-align:center;
+ padding:25px;
+ color:#aab8ca;
+ margin-top:30px;
+ border-top:1px solid #26374d;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>🎮 GameUz</h1>
+<p>O'yinlar va foydali ma'lumotlar olami</p>
+</header>
+
+<nav>
+<a href="#games">O'yinlar</a>
+<a href="#tips">Maslahatlar</a>
+<a href="#about">Biz haqimizda</a>
+</nav>
+
+<section class="hero">
+<h2>O'yinlar olamiga xush kelibsiz!</h2>
+<p>Eng qiziqarli o'yinlar va foydali texnologik ma'lumotlar.</p>
+<input id="search" placeholder="O'yin qidirish..." oninput="searchGames()">
+</section>
+
+<main class="container">
+<h2 class="title" id="games">🔥 Mashhur o'yinlar</h2>
+
+<div class="grid" id="gameList">
+
+<div class="card">
+<h3>🧱 Minecraft</h3>
+<p>Bloklardan dunyo qurish, resurs yig'ish va sarguzashtlar.</p>
+</div>
+
+<div class="card">
+<h3>🎮 Roblox</h3>
+<p>Minglab turli o'yinlar va ijodiy imkoniyatlar.</p>
+</div>
+
+<div class="card">
+<h3>🚗 GTA</h3>
+<p>Ochiq dunyo va katta xaritalar bilan mashhur o'yinlar seriyasi.</p>
+</div>
+
+<div class="card">
+<h3>⚽ eFootball</h3>
+<p>Futbol va jamoaviy musobaqalar.</p>
+</div>
+
+<div class="card">
+<h3>🏎️ Asphalt</h3>
+<p>Tezkor poyga va avtomobillar.</p>
+</div>
+
+<div class="card">
+<h3>🔫 PUBG Mobile</h3>
+<p>Jamoaviy omon qolish va strategiya o'yini.</p>
+</div>
+
+</div>
+
+<h2 class="title" id="tips">💡 Foydali ma'lumotlar</h2>
+<div class="grid">
+<div class="card">
+<h3>FPS nima?</h3>
+<p>FPS — bir soniyada ekranda ko'rsatiladigan kadrlar soni.</p>
+</div>
+
+<div class="card">
+<h3>RAM nima?</h3>
+<p>RAM telefonning vaqtinchalik ishchi xotirasidir.</p>
+</div>
+
+<div class="card">
+<h3>Ping nima?</h3>
+<p>Ping internet va server orasidagi javob vaqtidir.</p>
+</div>
+
+<div class="card">
+<h3>Telefon tezligi</h3>
+<p>Keraksiz ilovalarni yopish va bo'sh xotira qoldirish foydali.</p>
+</div>
+</div>
+
+<section class="card" id="about" style="margin-top:25px">
+<h2>GameUz haqida</h2>
+<p>GameUz — o'yinlar, texnologiya va foydali maslahatlar haqida o'zbek tilidagi sayt.</p>
+</section>
+</main>
+
+<footer>
+© 2026 GameUz | Barcha huquqlar himoyalangan
+</footer>
+
+<script>
+function searchGames(){
+ let q=document.getElementById("search").value.toLowerCase();
+ let cards=document.querySelectorAll("#gameList .card");
+ cards.forEach(card=>{
+  card.style.display=
+  card.innerText.toLowerCase().includes(q)?"block":"none";
+ });
+}
+</script>
+
+</body>
+</html>
